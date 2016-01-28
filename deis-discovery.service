@@ -1,0 +1,8 @@
+[Unit]
+Description=Discovery Service
+
+[Service]
+ExecStart=/usr/bin/docker run --name discovery-service -it -p 8000:8000 10.0.0.4:5000/discovery-service:latest  /bin/sh -c "cd /app && java -jar *.jar --server.port=8000"
+
+[Install]
+WantedBy=multi-user.target
